@@ -48,3 +48,21 @@ services:
       /usr/bin/mc mb s3/hive;
       exit 0;
       '
+
+  metabase-app:
+    image: metabase/metabase
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      # declare your mount volume /host/dir:/container/dir
+      - /home/app/metabase-data:/metabase-data
+    environment:
+      MB_DB_TYPE: presto
+      MB_DB_DBNAME: muller_schema
+      MB_DB_PORT: 8080
+      MB_DB_USER: metabase
+      MB_DB_PASS: metabase
+      MB_DB_HOST: presto
+    depends_on:
+      - presto

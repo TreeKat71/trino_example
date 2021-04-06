@@ -25,6 +25,7 @@ services:
       - 8080:8080
     volumes:
       - ./trino/hive.properties:/etc/trino/catalog/hive.properties
+      - ./trino/mysql.properties:/etc/trino/catalog/mysql.properties
 
   minio:
     image: minio/minio

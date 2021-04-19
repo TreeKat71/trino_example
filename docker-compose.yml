@@ -19,6 +19,14 @@ services:
     depends_on:
       - mariadb
 
+  hive-metastore2:
+    build: metastore/
+    image: hive-metastore:latest
+    ports:
+      - 9084:9083
+    depends_on:
+      - mariadb
+
   presto:
     image: trinodb/trino
     ports:

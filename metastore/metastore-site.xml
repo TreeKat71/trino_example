@@ -9,7 +9,7 @@
     </property>
     <property>
         <name>metastore.thrift.uris</name>
-        <value>thrift://0.0.0.0:9083</value>
+        <value>thrift://0.0.0.0:9083,thrift://0.0.0.0:9084</value>
         <description>Thrift URI for the remote metastore. Used by metastore client to connect to remote metastore.</description>
     </property>
     
